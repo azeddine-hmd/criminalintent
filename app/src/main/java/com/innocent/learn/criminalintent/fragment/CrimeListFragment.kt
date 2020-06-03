@@ -54,13 +54,17 @@ class CrimeListFragment : Fragment() {
         val titleTextView: TextView = itemView.findViewById(R.id.crime_title)
         val dateTextView: TextView = itemView.findViewById(R.id.cime_date)
 
+        init {
+            itemView.setOnClickListener(this)
+        }
+
         fun bind(crime: Crime) {
             this.crime = crime
             titleTextView.text = this.crime.title
             dateTextView.text = this.crime.date.toString()
         }
 
-        override fun onClick(view: View) {
+        override fun onClick(v: View?) {
             Toast.makeText(context, "${crime.title} is pressed!", Toast.LENGTH_SHORT).show()
         }
     }
