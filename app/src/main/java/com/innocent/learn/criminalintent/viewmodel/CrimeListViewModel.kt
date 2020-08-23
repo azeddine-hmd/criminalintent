@@ -2,16 +2,13 @@ package com.innocent.learn.criminalintent.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.innocent.learn.criminalintent.model.Crime
+import com.innocent.learn.criminalintent.repository.CrimeRepository
 
 class CrimeListViewModel : ViewModel() {
-    val crimes = mutableListOf<Crime>()
+    private val _crimeRepository = CrimeRepository.get()
+    val crimeListLiveData = _crimeRepository.getCrimes()
 
-    init {
-        for (i in 0 until 100) {
-            val crime = Crime()
-            crime.title = "Crime #$i"
-            crime.isSolved = i % 2 == 0
-            crimes += crime
-        }
+    fun addCrime(crime: Crime) {
+        _crimeRepository.addCrime(crime)
     }
 }
