@@ -7,6 +7,7 @@ import com.innocent.learn.criminalintent.database.CrimeDao
 import com.innocent.learn.criminalintent.database.CrimeDatabase
 import com.innocent.learn.criminalintent.database.migration_1_2
 import com.innocent.learn.criminalintent.model.Crime
+import java.io.File
 import java.util.*
 import java.util.concurrent.Executors
 
@@ -20,6 +21,7 @@ class CrimeRepository private constructor(context: Context) {
     ).addMigrations(migration_1_2).build()
     private val crimeDao: CrimeDao = crimeDatabase.crimeDao()
     private val executor = Executors.newSingleThreadExecutor()
+    private val filesdir = context.applicationContext.filesDir
 
     fun getCrimes(): LiveData<List<Crime>> = crimeDao.getCrimes()
 
@@ -36,6 +38,8 @@ class CrimeRepository private constructor(context: Context) {
             crimeDao.addCrime(crime)
         }
     }
+
+    fun getPhotoFile(crime: Crime): File = File(filesdir, crime.photoFileName)
 
     companion object {
         private var instance: CrimeRepository? = null
