@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">الجرائم</string>
+
+    <string name="crime_title_hint">ادخل عنوان للجريمة.</string>
+    <string name="crime_title_label">العنوان</string>
+    <string name="crime_details_label">التفاصيل</string>
+    <string name="crime_solved_label">تم حلها</string>
+
+    <string name="new_cime">جريمة جديدة</string>
+
+    <string name="crime_suspect_text">اختر المشتبه به</string>
+    <string name="crime_report_text">إرسال تقرير جريمة</string>
+
+    <string name="crime_report">%1$s! تم اكتشاف الجريمة في %2$s. %3$s, و %4$s</string>
+    <string name="crime_report_solved">تم حل القضية</string>
+    <string name="crime_report_unsolved">لم تحل القضية</string>
+    <string name="crime_report_no_suspect">ليس هناك مشتبه به</string>
+    <string name="crime_report_suspect">المشتبه به هو %s.</string>
+    <string name="crime_report_subject">تقرير الجرائم</string>
+    <string name="send_report">إرسال تقرير الجريمة عبر</string>
+
+</resources>
